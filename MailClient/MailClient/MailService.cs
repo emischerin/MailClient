@@ -9,8 +9,13 @@ namespace MailClient
         abstract class MailService
         {
 
-                public virtual string Smtp { get; }
-                public virtual int Socket { get; }
+                public virtual string Smtp { get; set; }
+                public virtual int Socket { get; set; }
+		public virtual string Name { get; }
 
-        }
+		public override string ToString()
+		{
+			return Name;
+		}
+	}
 }

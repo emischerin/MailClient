@@ -10,6 +10,8 @@ namespace MailClient
         {
                 private const string smtp = "smtp.gmail.com";
                 private const int socket = 587;
+		private const string name = "Google";
+
 
                 public override string Smtp
                 {
@@ -20,5 +22,10 @@ namespace MailClient
                 {
                         get { return socket; }
                 }
+
+		public override string Name
+		{
+			get { return name; }
+		}
         }
 }

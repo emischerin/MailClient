@@ -20,9 +20,31 @@ namespace MailClient
         /// </summary>
         public partial class MainWindow : Window
         {
+		MailService[] mailservicelist;
+
                 public MainWindow()
                 {
                         InitializeComponent();
+			mailservicelist = new MailService[] {new Gmail(), new Yandex()};
+			MailServiceListBox.ItemsSource = mailservicelist;
                 }
-        }
+
+		private bool AllowEnter()
+		{
+			if ((PasswordBox.Password != null) && (EmailBox.Text != "") && (MailServiceListBox.SelectedItem != null))
+				return true;
+
+			else return false;
+		}
+
+		private void OnEnterButtonClick(object sender, RoutedEventArgs e)
+		{
+			if (AllowEnter())
+			{
+				User user = new User(EmailBox.Text, PasswordBox.Password.ToString());
+				
+			}
+
+		}
+	}
 }

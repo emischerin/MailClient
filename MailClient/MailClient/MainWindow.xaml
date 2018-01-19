@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Вход" Height="500" Width="600">
     <Grid>
-        
+        <Button x:Name="EnterButton" Click="OnEnterButtonClick" Content="Войти" HorizontalAlignment="Left" Margin="103,386,0,0" VerticalAlignment="Top" Width="122" RenderTransformOrigin="0.504,1.975"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="171,101,0,0" VerticalAlignment="Top" Width="160" Height="23"/>
+        <TextBox x:Name="EmailBox" HorizontalAlignment="Left" Height="23" Margin="10,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <Label Content="Введите e-mail" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="147"/>
+        <Label Content="Введите пароль" HorizontalAlignment="Left" Margin="171,70,0,0" VerticalAlignment="Top" Width="160"/>
+        <ListBox x:Name="MailServiceListBox" HorizontalAlignment="Left" Height="58" Margin="62,174,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label Content="Выберите Почтовый Сервис" HorizontalAlignment="Left" Margin="62,143,0,0" VerticalAlignment="Top" Width="201"/>
+
     </Grid>
 </Window>

@@ -10,6 +10,7 @@ namespace MailClient
         {
                 private const string smtp = "smtp.yandex.ru";
                 private const int socket = 465;
+		private const string name = "Yandex";
 
                 public override string Smtp
                 {
@@ -20,5 +21,10 @@ namespace MailClient
                 {
                         get { return socket; }
                 }
-        }
+
+		public override string Name
+		{
+			get { return name; }
+		}
+	}
 }
