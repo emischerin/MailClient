@@ -13,6 +13,19 @@ namespace MailClient
 	{
 		private MailMessage mailmessage = new MailMessage();
 		
+		public Message(String sender, string to, string body, string subject)
+		{
+			MailAddress ma = new MailAddress(sender);
+			mailmessage.From = ma;
+			mailmessage.To.Add(to);
+			mailmessage.Body = body;
+			mailmessage.Subject = subject;
+		}
+
+		public MailMessage MailMessage
+		{
+			get { return mailmessage; }
+		}
 
 		public MailAddress Sender
 		{

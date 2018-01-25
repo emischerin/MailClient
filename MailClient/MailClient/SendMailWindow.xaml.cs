@@ -45,5 +45,12 @@ namespace MailClient
 				attachmentlist.Add(ofd.FileName);
 			}
 		}
+
+		private void SendButton_Click(object sender, RoutedEventArgs e)
+		{
+			Message msg = new Message(currentuser.Email,ToBox.Text,BodyBox.Text,ThemeBox.Text);
+			MailSender ms = new MailSender(mailservice, currentuser);
+			ms.Send(msg);
+		}
 	}
 }
