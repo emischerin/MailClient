@@ -42,7 +42,9 @@ namespace MailClient
 			if (AllowEnter())
 			{
 				User user = new User(EmailBox.Text, PasswordBox.Password.ToString());
-				
+				SendMailWindow sm = new SendMailWindow(user, (MailService)MailServiceListBox.SelectedItem);
+				sm.Show();
+				this.Close();
 			}
 
 		}

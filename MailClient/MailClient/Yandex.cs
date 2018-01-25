@@ -8,7 +8,7 @@ namespace MailClient
 {
         class Yandex : MailService
         {
-                private const string smtp = "smtp.yandex.ru";
+                private const  string smtp = "smtp.yandex.ru";
                 private const int socket = 465;
 		private const string name = "Yandex";
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MailClient
 {
-        abstract class MailService
+        public abstract class MailService
         {
 
                 public virtual string Smtp { get; set; }

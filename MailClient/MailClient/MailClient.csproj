@@ -56,6 +56,9 @@
     </ApplicationDefinition>
     <Compile Include="CustomMailService.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="SendMailWindow.xaml.cs">
+      <DependentUpon>SendMailWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="Yandex.cs" />
     <Page Include="MainWindow.xaml">
@@ -72,6 +75,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SendMailWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

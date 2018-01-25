@@ -12,6 +12,7 @@ namespace MailClient
 	class Message
 	{
 		private MailMessage mailmessage = new MailMessage();
+		
 
 		public MailAddress Sender
 		{
@@ -43,5 +44,10 @@ namespace MailClient
 			set { mailmessage.IsBodyHtml = value; }
 		}
 
+		public void AddAttachement(string path)
+		{
+			Attachment at = new Attachment(path);
+			mailmessage.Attachments.Add(at);
+		}
 	}
 }
