@@ -25,13 +25,23 @@ namespace MailClient
 		private User currentuser;
 		private MailService mailservice;
 		private List<Message> messagelist = new List<Message>();
-		private List<String> attachmentlist = new List<String>();
+		private List<String> attachments = new List<String>();
 
 		public SendMailWindow(User user, MailService selectedmailservice)
 		{
 			InitializeComponent();
 			currentuser = user;
 			mailservice = selectedmailservice;
+		}
+
+		
+		private void IncludeAttachments(Message a)
+		{
+			// Метод добавляет вложения из списка. Используется в SendButton_Click.
+			for(int i = 0; i < attachments.Count;i++)
+			{
+				a.AddAttachement(attachments[i]);
+			}
 		}
 
 		private void AddAttachmentButton_Click(object sender, RoutedEventArgs e)
@@ -42,7 +52,7 @@ namespace MailClient
 
 			if (result == true)
 			{
-				attachmentlist.Add(ofd.FileName);
+				attachments.Add(ofd.FileName);
 			}
 		}
 
@@ -50,7 +60,20 @@ namespace MailClient
 		{
 			Message msg = new Message(currentuser.Email,ToBox.Text,BodyBox.Text,ThemeBox.Text);
 			MailSender ms = new MailSender(mailservice, currentuser);
-			ms.Send(msg);
+			IncludeAttachments(msg);
+			messagelist.Add(msg);
+
+			Task send = new Task(() => ms.Send(msg));
+
+			try
+			{
+				send.Start();
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+						
 		}
 	}
 }

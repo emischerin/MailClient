@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
 
+
+
 namespace MailClient
 {
 	class MailSender
@@ -31,7 +33,9 @@ namespace MailClient
 
 		public void Send(Message msg)
 		{
-			sc.Send(msg.MailMessage);
+			
+				sc.Send(msg.MailMessage);		
+						
 		}
 	}
 }

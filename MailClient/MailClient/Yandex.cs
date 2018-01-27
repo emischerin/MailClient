@@ -8,8 +8,11 @@ namespace MailClient
 {
         class Yandex : MailService
         {
+		// Для простой отправки по SMTP нужен порт без шифрования. 465 - это порт с шифрованием.
+		// Для его работы необходим другой код.
+
                 private const  string smtp = "smtp.yandex.ru";
-                private const int socket = 465;
+                private const int socket = 587;
 		private const string name = "Yandex";
 
                 public override string Smtp
